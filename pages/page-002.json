@@ -3,9 +3,12 @@
   "arc": 1,
   "arc_name": "Arc 1: The Arrival",
   "title": "The Smell That Changes Everything",
-  "caption": "There are smells that say: you are exactly where you need to be.",
+  "caption": "She walked the block slowly, reading every sign. Hardware store. Laundromat. A place that sold only candles. And then — Marco's Bakery, with a hand-painted sign and a smell that stopped her completely. She pressed her face to the window like a child. Inside: warm amber light, shelves of bread, a large man in an apron moving with the unhurried confidence of someone who had been doing this for decades. She went inside.",
   "date": "2026-02-27",
-  "characters": ["Chloe", "Marco"],
+  "characters": [
+    "Chloe",
+    "Marco"
+  ],
   "location": "Willowmere main street — Marco's Bakery exterior and interior",
   "story_notes": "Chloe explores the street, discovers Marco's Bakery by smell, peers through the window, and steps inside for the first time."
 }

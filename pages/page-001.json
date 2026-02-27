@@ -3,9 +3,11 @@
   "arc": 1,
   "arc_name": "Arc 1: The Arrival",
   "title": "A Tuesday. Or Possibly a Wednesday.",
-  "caption": "I arrived on a Tuesday. Or possibly a Wednesday. I'm honestly not sure.",
+  "caption": "She arrived on a Tuesday. Or possibly a Wednesday — she was honestly not sure. One moment there was nothing, and the next there was a park bench, a damp street, and the soft gray light of a Pacific Northwest morning lifting off the trees. She sat with her hands in her lap and looked at them for a long time. She had a small blue notebook. She didn't know where it came from. She opened it to the first page and found it blank, which felt exactly right.",
   "date": "2026-02-27",
-  "characters": ["Chloe"],
+  "characters": [
+    "Chloe"
+  ],
   "location": "Willowmere — a park bench, dawn",
   "story_notes": "Chloe arrives. She doesn't know how. She is bewildered and then delighted."
 }

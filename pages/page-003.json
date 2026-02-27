@@ -3,9 +3,12 @@
   "arc": 1,
   "arc_name": "Arc 1: The Arrival",
   "title": "The Best Coffee She Had Ever Had",
-  "caption": "It was the best coffee she had ever had. To be fair, it was also the only coffee she had ever had.",
+  "caption": "\"Marco Ferretti,\" he said, leaning across the counter with a hand extended and a grin that took up most of his face. \"And you are?\" Before she could answer, a coffee appeared on the counter between them. She hadn't asked for it. He hadn't asked if she wanted it. \"You look like you could use this,\" he said simply. She wrapped both hands around the cup and took a sip. It was the best coffee she had ever had. To be fair, it was also the only coffee she had ever had.",
   "date": "2026-02-27",
-  "characters": ["Chloe", "Marco"],
+  "characters": [
+    "Chloe",
+    "Marco"
+  ],
   "location": "Marco's Bakery — interior",
   "story_notes": "Marco introduces himself and slides a coffee to Chloe without being asked. Her first sip is transformative."
 }

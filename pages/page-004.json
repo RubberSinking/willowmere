@@ -3,9 +3,13 @@
   "arc": 1,
   "arc_name": "Arc 1: The Arrival",
   "title": "The Good Ones Never Are",
-  "caption": "The good ones never are.",
+  "caption": "She found the corner table herself. Marco didn't assign it — he just quietly made sure no one else ever sat there. She settled in with her notebook and her coffee, and Marco asked, with genuine curiosity, where she was from. She thought about it honestly. \"I'm not entirely sure,\" she said. He nodded, unbothered, going back to wiping down the counter. \"The good ones never are.\" She was still turning that over in her mind when she noticed the black cat on the windowsill, watching her with calm golden eyes as if it had been expecting her.",
   "date": "2026-02-27",
-  "characters": ["Chloe", "Marco", "Luna"],
+  "characters": [
+    "Chloe",
+    "Marco",
+    "Luna"
+  ],
   "location": "Marco's Bakery — the corner table",
   "story_notes": "Chloe claims her corner table. Marco asks where she's from — she honestly doesn't know. Marco is unbothered. Luna appears on the windowsill for the first time."
 }
