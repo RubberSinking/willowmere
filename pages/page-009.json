@@ -5,7 +5,12 @@
   "title": "You Can Do Dishes",
   "caption": "At closing time she was still there. Marco said nothing about it. He just wiped down the counter, looked at her once, and told her there was a spare room upstairs. \"You can do dishes,\" he said, as if this were the obvious arrangement. The room was small and simple and the window looked out at the quiet street. Luna was already on the bed when she opened the door, curled in the exact center of the white quilt, eyes half-open, completely unbothered. She would later learn that Luna approved of very few people. This would become a point of pride.",
   "date": "2026-02-28",
-  "characters": ["Chloe", "Marco", "Luna"],
-  "location": "Marco's Bakery — closing time, then upstairs spare room",
-  "story_notes": "Chloe has nowhere to sleep. Marco offers the spare room with no fuss. Luna is already on the bed."
+  "characters": [
+    "Chloe",
+    "Marco",
+    "Luna"
+  ],
+  "location": "Marco's Bakery \u2014 closing time, then upstairs spare room",
+  "story_notes": "Chloe has nowhere to sleep. Marco offers the spare room with no fuss. Luna is already on the bed.",
+  "image": "page-009.png"
 }
