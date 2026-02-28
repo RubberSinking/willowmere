@@ -74,7 +74,8 @@ if (!$selected && $latest) $selected = $latest;
 
   <!-- Current Page -->
   <div class="comic-page">
-    <img src="pages/page-<?= str_pad($selected['page'], 3, '0', STR_PAD_LEFT) ?>.jpg" alt="Page <?= $selected['page'] ?>">
+    <?php $pnum = str_pad($selected['page'], 3, '0', STR_PAD_LEFT); $pext = file_exists(__DIR__.'/pages/page-'.$pnum.'.png') ? 'png' : 'jpg'; ?>
+    <img src="pages/page-<?= $pnum ?>.<?= $pext ?>" alt="Page <?= $selected['page'] ?>">
     <div class="page-meta">
       <div class="arc-label"><?= htmlspecialchars($selected['arc_name']) ?></div>
       <div class="page-num">Page <?= $selected['page'] ?></div>
@@ -93,7 +94,8 @@ if (!$selected && $latest) $selected = $latest;
       <?php foreach (array_reverse($pages) as $p): ?>
       <div class="thumb">
         <a href="?page=<?= $p['page'] ?>">
-          <img src="pages/page-<?= str_pad($p['page'], 3, '0', STR_PAD_LEFT) ?>.jpg"
+          <?php $tnum = str_pad($p['page'], 3, '0', STR_PAD_LEFT); $text = file_exists(__DIR__.'/pages/page-'.$tnum.'.png') ? 'png' : 'jpg'; ?>
+              <img src="pages/page-<?= $tnum ?>.<?= $text ?>"
                alt="Page <?= $p['page'] ?>"
                <?= $p['page'] === $selected['page'] ? 'class="active"' : '' ?>>
         </a>
