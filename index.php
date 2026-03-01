@@ -30,7 +30,12 @@ if (!$selected && $latest) $selected = $latest;
   header p { font-size: 0.85rem; color: #c8b89a; font-style: italic; margin-top: 4px; }
   .main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
   .comic-page { background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.1); overflow: hidden; margin-bottom: 28px; }
-  .comic-page img { width: 100%; display: block; }
+  .comic-page img { width: 100%; display: block; cursor: zoom-in; }
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 96vw; max-height: 96vh; object-fit: contain; border-radius: 4px; }
+  .lightbox-close { position: fixed; top: 16px; right: 20px; background: none; border: none; color: #fff; font-size: 2.2rem; cursor: pointer; line-height: 1; opacity: 0.8; }
+  .lightbox-close:hover { opacity: 1; }
   .page-meta { padding: 16px 20px 20px; }
   .page-num { font-size: 0.75rem; color: #a08060; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
   .page-title { font-size: 1.1rem; color: #3a2e24; margin-bottom: 8px; }
@@ -108,5 +113,13 @@ if (!$selected && $latest) $selected = $latest;
 
 <?php endif; ?>
 </div>
+<div class="lightbox" id="lb"><button class="lightbox-close" onclick="closeLb()"></body>#xd7;</button><img id="lb-img" src="" alt=""></div>
+<script>
+var lb=document.getElementById("lb"),lbImg=document.getElementById("lb-img");
+document.querySelector(".comic-page img").addEventListener("click",function(){lbImg.src=this.src;lb.classList.add("open");});
+function closeLb(){lb.classList.remove("open");lbImg.src="";}
+lb.addEventListener("click",function(e){if(e.target===lb)closeLb();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLb();});
+</script>
 </body>
 </html>
