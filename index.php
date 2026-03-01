@@ -36,6 +36,11 @@ if (!$selected && $latest) $selected = $latest;
   .lightbox img { max-width: 96vw; max-height: 96vh; object-fit: contain; border-radius: 4px; }
   .lightbox-close { position: fixed; top: 16px; right: 20px; background: none; border: none; color: #fff; font-size: 2.2rem; cursor: pointer; line-height: 1; opacity: 0.8; }
   .lightbox-close:hover { opacity: 1; }
+  .lightbox-nav { position: fixed; top: 50%; transform: translateY(-50%); background: none; border: none; color: #fff; font-size: 3rem; cursor: pointer; opacity: 0.6; padding: 16px; line-height: 1; }
+  .lightbox-nav:hover { opacity: 1; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-nav:disabled { opacity: 0.15; cursor: default; }
   .page-meta { padding: 16px 20px 20px; }
   .page-num { font-size: 0.75rem; color: #a08060; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
   .page-title { font-size: 1.1rem; color: #3a2e24; margin-bottom: 8px; }
@@ -113,13 +118,24 @@ if (!$selected && $latest) $selected = $latest;
 
 <?php endif; ?>
 </div>
-<div class="lightbox" id="lb"><button class="lightbox-close" onclick="closeLb()">&times;</button><img id="lb-img" src="" alt=""></div>
+<div class="lightbox" id="lb"><button class="lightbox-close" onclick="closeLb()">&times;</button><button class="lightbox-nav lightbox-prev" id="lb-prev" onclick="lbNav(-1)">&#8249;</button><img id="lb-img" src="" alt=""><button class="lightbox-nav lightbox-next" id="lb-next" onclick="lbNav(1)">&#8250;</button></div>
 <script>
 var lb=document.getElementById("lb"),lbImg=document.getElementById("lb-img");
-document.querySelector(".comic-page img").addEventListener("click",function(){lbImg.src=this.src;lb.classList.add("open");});
+var lbPages=[], lbIdx=0;
+// Build ordered page list from thumbnails
+document.querySelectorAll(".thumb a").forEach(function(a){
+  var img=a.querySelector("img"); if(img) lbPages.unshift({src:img.src,href:a.href});
+});
+// Also add current page
+var mainImg=document.querySelector(".comic-page img");
+if(mainImg){ var cur={src:mainImg.src,href:window.location.href}; lbIdx=lbPages.findIndex(function(p){return p.src===mainImg.src;}); if(lbIdx<0){lbPages.push(cur);lbIdx=lbPages.length-1;} }
+function lbOpen(idx){ lbIdx=idx; lbImg.src=lbPages[idx].src; lb.classList.add("open"); lbUpdateNav(); }
+function lbUpdateNav(){ document.getElementById("lb-prev").disabled=lbIdx<=0; document.getElementById("lb-next").disabled=lbIdx>=lbPages.length-1; }
+function lbNav(dir){ var n=lbIdx+dir; if(n>=0&&n<lbPages.length){lbIdx=n;lbImg.src=lbPages[n].src;lbUpdateNav();} }
+if(mainImg) mainImg.addEventListener("click",function(){lbOpen(lbIdx);});
 function closeLb(){lb.classList.remove("open");lbImg.src="";}
 lb.addEventListener("click",function(e){if(e.target===lb)closeLb();});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLb();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLb();else if(e.key==="ArrowLeft")lbNav(-1);else if(e.key==="ArrowRight")lbNav(1);});
 </script>
 </body>
 </html>
