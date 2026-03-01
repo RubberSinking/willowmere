@@ -113,7 +113,7 @@ if (!$selected && $latest) $selected = $latest;
 
 <?php endif; ?>
 </div>
-<div class="lightbox" id="lb"><button class="lightbox-close" onclick="closeLb()"></body>#xd7;</button><img id="lb-img" src="" alt=""></div>
+<div class="lightbox" id="lb"><button class="lightbox-close" onclick="closeLb()">&times;</button><img id="lb-img" src="" alt=""></div>
 <script>
 var lb=document.getElementById("lb"),lbImg=document.getElementById("lb-img");
 document.querySelector(".comic-page img").addEventListener("click",function(){lbImg.src=this.src;lb.classList.add("open");});
