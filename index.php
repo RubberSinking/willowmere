@@ -136,6 +136,9 @@ if(mainImg) mainImg.addEventListener("click",function(){lbOpen(lbIdx);});
 function closeLb(){lb.classList.remove("open");lbImg.src="";}
 lb.addEventListener("click",function(e){if(e.target===lb)closeLb();});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLb();else if(e.key==="ArrowLeft")lbNav(-1);else if(e.key==="ArrowRight")lbNav(1);});
+var lbTouchX=null;
+lb.addEventListener("touchstart",function(e){lbTouchX=e.touches[0].clientX;},{passive:true});
+lb.addEventListener("touchend",function(e){if(lbTouchX===null)return;var dx=e.changedTouches[0].clientX-lbTouchX;if(Math.abs(dx)>50){lbNav(dx<0?1:-1);}lbTouchX=null;},{passive:true});
 </script>
 </body>
 </html>
