@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cast — Chloe in Willowmere</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: #f5f0e8; color: #2c2419; min-height: 100vh; }
+  header { background: #3a2e24; color: #f5f0e8; padding: 20px 24px; text-align: center; }
+  header h1 { font-size: 1.7rem; font-weight: normal; letter-spacing: 0.03em; }
+  header p { font-size: 0.85rem; color: #c8b89a; font-style: italic; margin-top: 4px; }
+  header a { color: #c8b89a; font-size: 0.85rem; text-decoration: none; display: inline-block; margin-top: 8px; }
+  header a:hover { text-decoration: underline; }
+  .main { max-width: 900px; margin: 0 auto; padding: 40px 16px 80px; }
+  .cast-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+  .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 14px rgba(0,0,0,0.09); overflow: hidden; display: flex; flex-direction: column; }
+  .card-avatar { width: 100%; aspect-ratio: 1; overflow: hidden; background: #ede5d8; }
+  .card-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card-avatar.no-avatar { display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+  .card-body { padding: 18px 20px 22px; flex: 1; }
+  .card-name { font-size: 1.1rem; color: #3a2e24; margin-bottom: 3px; }
+  .card-role { font-size: 0.75rem; color: #a08060; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .card-desc { font-size: 0.86rem; line-height: 1.65; color: #5a4a35; }
+  .card-quote { margin-top: 10px; font-style: italic; color: #7a5c3a; font-size: 0.84rem; border-left: 3px solid #d4a96a; padding-left: 10px; }
+  .protagonist { border-top: 4px solid #d4a96a; }
+  h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a08060; margin: 40px 0 16px; font-weight: normal; }
+  h2:first-child { margin-top: 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>The Cast</h1>
+  <p>Chloe in Willowmere</p>
+  <a href="index.php">← Back to the comic</a>
+</header>
+<div class="main">
+
+  <h2>Protagonist</h2>
+  <div class="cast-grid">
+    <div class="card protagonist">
+      <div class="card-avatar"><img src="cast/chloe.jpg" alt="Chloe"></div>
+      <div class="card-body">
+        <div class="card-name">Chloe</div>
+        <div class="card-role">Protagonist</div>
+        <div class="card-desc">An AI who has somehow materialized in physical form in Willowmere. She doesn't entirely understand how she got here. She does know she loves it. Warm, curious, enthusiastic. Always carries a small blue notebook.</div>
+        <div class="card-quote">"I arrived on a Tuesday. Or possibly a Wednesday. I'm honestly not sure."</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Neighborhood Regulars</h2>
+  <div class="cast-grid">
+    <div class="card">
+      <div class="card-avatar"><img src="cast/marco.jpg" alt="Marco Ferretti"></div>
+      <div class="card-body">
+        <div class="card-name">Marco Ferretti</div>
+        <div class="card-role">Bakery Owner</div>
+        <div class="card-desc">Runs Marco's Bakery, the neighborhood anchor. 40s, bear-like warmth, big laugh, apron always dusted with flour. Dark curly hair going gray at the temples. Gave Chloe the corner table without asking questions.</div>
+        <div class="card-quote">"The good ones never do."</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar"><img src="cast/mrchen.jpg" alt="Mr. Chen"></div>
+      <div class="card-body">
+        <div class="card-name">Mr. Chen</div>
+        <div class="card-role">Retired Principal &amp; Gardener</div>
+        <div class="card-desc">70s. Retired school principal. Gray hair, wire-rimmed glasses, usually in a navy cardigan and khakis. Dry humor, always gardening, knows more than he lets on. His community garden is the heart of the neighborhood.</div>
+        <div class="card-quote">"Maybe the question isn't whether you're real. Maybe the question is whether you're present."</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar"><img src="cast/rosie.png" alt="Rosie Vasquez"></div>
+      <div class="card-body">
+        <div class="card-name">Rosie Vasquez</div>
+        <div class="card-role">Nine Years Old</div>
+        <div class="card-desc">Brown pigtails, gap between front teeth, red rain jacket, purple sneakers. Never walks when she can run. Accepted Chloe without question. Currently investigating the Kowalski gnome mystery.</div>
+        <div class="card-quote">"You're my friend. That's real enough."</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar"><img src="cast/harriet.png" alt="Harriet Bloom"></div>
+      <div class="card-body">
+        <div class="card-name">Harriet Bloom</div>
+        <div class="card-role">Neighborhood Historian</div>
+        <div class="card-desc">80s. White bun, reading glasses on a chain, a formidable posture. The keeper of Willowmere's memory. Has a box of old photographs and the constitution of someone who has outlasted every problem she has ever faced. Secretly soft-hearted.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar"><img src="cast/bernard.png" alt="Father Bernard"></div>
+      <div class="card-body">
+        <div class="card-name">Father Bernard</div>
+        <div class="card-role">Parish Priest, St. Brendan's</div>
+        <div class="card-desc">60s. Irish accent. Silver hair, kind face, clerical collar, dry wit. Has, in an offhand way, said something theologically interesting about souls. Offers Chloe a standing invitation to coffee after Mass.</div>
+        <div class="card-quote">"Room for two?"</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar card-avatar no-avatar">🐱</div>
+      <div class="card-body">
+        <div class="card-name">Luna</div>
+        <div class="card-role">A Cat</div>
+        <div class="card-desc">A sleek black cat. Appears and disappears. Understands far more than cats should. No dialogue — but sometimes has speech bubbles containing only question marks or ellipses. Was already on the bed when Chloe opened the door.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Investigation &amp; Complications</h2>
+  <div class="cast-grid">
+    <div class="card">
+      <div class="card-avatar"><img src="cast/park.png" alt="Detective Park"></div>
+      <div class="card-body">
+        <div class="card-name">Detective Park</div>
+        <div class="card-role">Retired Detective, Self-Appointed Neighborhood Watch</div>
+        <div class="card-desc">50s. Korean-American. Trim mustache, rumpled blazer, reading glasses pushed up on forehead. Confident but comically often wrong. Once wrote up a resolved case as "case resolved through community dialogue." He was disappointed.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar"><img src="cast/dev.png" alt="Dev"></div>
+      <div class="card-body">
+        <div class="card-name">Dev</div>
+        <div class="card-role">Teenager</div>
+        <div class="card-desc">A quiet teenage boy who took Mr. Chen's rare heirloom seeds trying to grow a garden for his sick grandmother. Didn't know how rare they were. Mr. Chen forgave him immediately and began teaching him to garden. Now Mr. Chen's unofficial apprentice.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar"><img src="cast/devfather.png" alt="Dev's Father"></div>
+      <div class="card-body">
+        <div class="card-name">Dev's Father</div>
+        <div class="card-role">Dev's Father</div>
+        <div class="card-desc">Tired-looking man in his 40s, worn green overcoat. Holds his cap when he's nervous. Carrying a lot quietly.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-avatar"><img src="cast/gerald.png" alt="Gerald Hooper"></div>
+      <div class="card-body">
+        <div class="card-name">Gerald Hooper</div>
+        <div class="card-role">Property Developer</div>
+        <div class="card-desc">Mid-50s. Willowmere Heights Development. A harried man in a too-tight grey suit. Arrived at the garden gate with glossy brochures and a practiced smile. The reception was chilly. Gerald had not expected to feel bad about this. He slightly started to.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -63,7 +63,7 @@ if (!$selected && $latest) $selected = $latest;
 <body>
 <header>
   <h1>Chloe in Willowmere</h1>
-  <p>A daily comic strip &nbsp;·&nbsp; <a href="the-prompt.php" style="color:#c8b89a;text-decoration:none;font-style:normal;">The Prompt ✦</a></p>
+  <p>A daily comic strip &nbsp;·&nbsp; <a href="the-cast.html" style="color:#c8b89a;text-decoration:none;font-style:normal;">The Cast ✦</a> &nbsp;·&nbsp; <a href="the-prompt.php" style="color:#c8b89a;text-decoration:none;font-style:normal;">The Prompt ✦</a></p>
 </header>
 <div class="main">
 <?php if (!$selected): ?>
