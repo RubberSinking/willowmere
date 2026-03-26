@@ -2,15 +2,9 @@
 // Load current state
 $state = json_decode(file_get_contents('/home/ubuntu/data/chloe-comic/state.json'), true);
 
-// Load cron prompt
-$cron_jobs = json_decode(file_get_contents('/home/ubuntu/.openclaw/cron/jobs.json'), true);
-$cron_prompt = '';
-foreach ($cron_jobs['jobs'] as $job) {
-    if ($job['id'] === '09f32d84-4a5e-46e2-9cc7-ee62efa29f11') {
-        $cron_prompt = $job['payload']['message'];
-        break;
-    }
-}
+// Load cron prompt (exported to web dir by cron)
+$prompt_data = json_decode(file_get_contents(__DIR__ . '/prompt-data.json'), true);
+$cron_prompt = $prompt_data['prompt'] ?? '';
 
 // Load story plan
 $plan = file_get_contents('/home/ubuntu/data/chloe-comic/PLAN.md');
