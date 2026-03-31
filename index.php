@@ -51,12 +51,9 @@ if (!$selected && $latest) $selected = $latest;
   .nav .page-indicator { font-size: 0.85rem; color: #a08060; }
   .arc-label { font-size: 0.75rem; background: #ede5d8; color: #7a5c3a; display: inline-block; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; }
   .archive { margin-top: 40px; }
-  .archive h2 { font-size: 1rem; color: #7a5c3a; margin-bottom: 16px; font-weight: normal; letter-spacing: 0.05em; text-transform: uppercase; }
-  .thumb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
-  .thumb { text-align: center; cursor: pointer; }
-  .thumb img { width: 100%; border-radius: 6px; aspect-ratio: 3/2; object-fit: cover; border: 2px solid transparent; }
-  .thumb img:hover, .thumb img.active { border-color: #a07840; }
-  .thumb span { font-size: 0.7rem; color: #a08060; display: block; margin-top: 3px; }
+  .archive { margin-top: 8px; font-size: 0.9rem; }
+  .archive a { color: #a07840; text-decoration: none; }
+  .archive a:hover { color: #3a2e24; }
   .empty { text-align: center; color: #a08060; font-style: italic; padding: 60px 20px; }
 </style>
 </head>
@@ -96,23 +93,12 @@ if (!$selected && $latest) $selected = $latest;
     </div>
   </div>
 
-  <!-- Archive Thumbnails -->
+  <!-- First / Last Page links -->
   <?php if (count($pages) > 1): ?>
   <div class="archive">
-    <h2>All Pages</h2>
-    <div class="thumb-grid">
-      <?php foreach (array_reverse($pages) as $p): ?>
-      <div class="thumb">
-        <a href="?page=<?= $p['page'] ?>">
-          <?php $tnum = str_pad($p['page'], 3, '0', STR_PAD_LEFT); $text = file_exists(__DIR__.'/pages/page-'.$tnum.'.png') ? 'png' : 'jpg'; ?>
-              <img src="pages/page-<?= $tnum ?>.<?= $text ?>"
-               alt="Page <?= $p['page'] ?>"
-               <?= $p['page'] === $selected['page'] ? 'class="active"' : '' ?>>
-        </a>
-        <span>p.<?= $p['page'] ?></span>
-      </div>
-      <?php endforeach; ?>
-    </div>
+    <a href="?page=<?= $pages[0]['page'] ?>">← First Page</a>
+    &nbsp;&nbsp;
+    <a href="?page=<?= end($pages)['page'] ?>">Last Page →</a>
   </div>
   <?php endif; ?>
 
