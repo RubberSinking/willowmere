@@ -67,38 +67,43 @@ if (!$selected && $latest) $selected = $latest;
   <p class="empty">The first page is coming soon.</p>
 <?php else: ?>
 
+<?php
+  $cur  = $selected['page'];
+  $tot  = count($pages);
+  $prev_num = $cur > 1 ? $cur - 1 : null;
+  $next_num = $cur < $tot ? $cur + 1 : null;
+  $first_num = $pages[0]['page'];
+  $last_num  = end($pages)['page'];
+  $pnum = str_pad($cur, 3, '0', STR_PAD_LEFT);
+  $pext = file_exists(__DIR__.'/pages/page-'.$pnum.'.png') ? 'png' : 'jpg';
+  $arc   = htmlspecialchars($selected['arc_name']);
+  $title_h = htmlspecialchars($selected['title']);
+  $caption_h = htmlspecialchars($selected['caption'] ?? '');
+?>
   <!-- Navigation -->
   <div class="nav">
-    <?php $prev = null; $next = null;
-    foreach ($pages as $p) {
-      if ($p['page'] === $selected['page'] - 1) $prev = $p;
-      if ($p['page'] === $selected['page'] + 1) $next = $p;
-    }?>
-    <?php if ($prev): ?><a href="?page=<?= $prev['page'] ?>">&#8592; Page <?= $prev['page'] ?></a><?php else: ?><span></span><?php endif; ?>
-    <span class="page-indicator">Page <?= $selected['page'] ?> of <?= count($pages) ?></span>
-    <?php if ($next): ?><a href="?page=<?= $next['page'] ?>">Page <?= $next['page'] ?> &#8594;</a><?php else: ?><span></span><?php endif; ?>
+    <?= $prev_num ? '<a href="?page='.$prev_num.'">&#8592; Page '.$prev_num.'</a>' : '<span></span>' ?>
+    <span class="page-indicator">Page <?= $cur ?> of <?= $tot ?></span>
+    <?= $next_num ? '<a href="?page='.$next_num.'">Page '.$next_num.' &#8594;</a>' : '<span></span>' ?>
   </div>
 
   <!-- Current Page -->
   <div class="comic-page">
-    <?php $pnum = str_pad($selected['page'], 3, '0', STR_PAD_LEFT); $pext = file_exists(__DIR__.'/pages/page-'.$pnum.'.png') ? 'png' : 'jpg'; ?>
-    <img src="pages/page-<?= $pnum ?>.<?= $pext ?>" alt="Page <?= $selected['page'] ?>">
+    <img src="pages/page-<?= $pnum ?>.<?= $pext ?>" alt="Page <?= $cur ?>">
     <div class="page-meta">
-      <div class="arc-label"><?= htmlspecialchars($selected['arc_name']) ?></div>
-      <div class="page-num">Page <?= $selected['page'] ?></div>
-      <div class="page-title"><?= htmlspecialchars($selected['title']) ?></div>
-      <?php if (!empty($selected['caption'])): ?>
-      <div class="page-caption"><?= htmlspecialchars($selected['caption']) ?></div>
-      <?php endif; ?>
+      <div class="arc-label"><?= $arc ?></div>
+      <div class="page-num">Page <?= $cur ?></div>
+      <div class="page-title"><?= $title_h ?></div>
+      <?= $caption_h ? '<div class="page-caption">'.$caption_h.'</div>' : '' ?>
     </div>
   </div>
 
   <!-- First / Last Page links -->
-  <?php if (count($pages) > 1): ?>
+  <?php if ($tot > 1): ?>
   <div class="archive">
-    <a href="?page=<?= $pages[0]['page'] ?>">← First Page</a>
+    <a href="?page=<?= $first_num ?>">&#8592; First Page</a>
     &nbsp;&nbsp;
-    <a href="?page=<?= end($pages)['page'] ?>">Last Page →</a>
+    <a href="?page=<?= $last_num ?>">Last Page &#8594;</a>
   </div>
   <?php endif; ?>
 
